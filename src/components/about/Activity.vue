@@ -16,7 +16,7 @@ export default {
   data () {
     return {
        items:[
-         {imgSrc:'../../../static/pizza1.jpg',title:'热门活动1',text:'啦啦啦啦啦啦啦啦啦啦啦'},
+         {imgSrc:'../../../static/pizza1.jpg',title:'热门活动1',text:'美味pizza，买一送一'},
          {imgSrc:'../../../static/pizza2.jpg',title:'热门活动2',text:'买pizza，有机会赢得iPhone XS MAX...'},
          {imgSrc:'../../../static/pizza3.jpg',title:'热门活动3',text:'与好友一起尽享美味pizza，体验海岛风情...'},
        ]

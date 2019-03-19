@@ -80,7 +80,7 @@ export default {
   name: 'Menu',
   data () {
     return {
-      items:{},
+      //items:{},
       //   0:{
       //     name:'芝士pizza',
       //     description:'挺好吃的',
@@ -156,14 +156,18 @@ methods: {
      },
      totalNum(){
         return this.newItems.length
+     },
+      items(){
+      return this.$store.getters.getMenuItems
      }
   },
-  mounted(){
-    axios.get('./menu-wl.json')
+   mounted(){
+    axios.get('./menu-jsx.json')
     .then(res=>{
-      this.items=res.data
+      // items = res.data
+      this.$store.commit('setMenuItems',res.data)
     })
-  }
+  },
   }
 
  </script>

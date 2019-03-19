@@ -70,7 +70,8 @@
                 }
                 axios.post('./menu-wl.json',data)
                 .then(res=>{
-                    this.$router.push('/menu')
+                    //this.$router.push('/menu')
+                    this.$store.commit('pushMenuItems',data) 
                 })
             },
            

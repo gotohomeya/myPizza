@@ -2,6 +2,7 @@
   <div id="app" class="container">
    <!--导航栏展示-->
     <Header></Header>  
+    
     <!--展示路由页面-->
     <router-view/>
   </div>
@@ -10,10 +11,15 @@
 <script>
 
 import Header from '@/components/Header'
+
 export default {
   name: 'App',
   components: {
-   'Header':Header
-  }
+   'Header':Header,
+   
+  },
+   mounted(){
+    sessionStorage.clear()
+  },
 }
 </script>

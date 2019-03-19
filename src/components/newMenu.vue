@@ -30,28 +30,41 @@
         name:"newMenu",
         data(){
             return{
-                items:[]
+                //items:[]
          }
         },
         mounted(){
             var that=this
             axios.get('./menu-wl.json')
             .then(res=>{
+                 var menus =[]
                 for(var key in res.data){
                     var item=res.data[key]
                     item.id=key
-                    that.items.push(item)
+                   // that.items.push(item)
+                   menus.push(res.data[key])
                 }
+                 console.log(menus)
+                // 优势在于通过vuex=>store,直接实现了数据的更新
+                that.$store.commit('setMenuItems',menus)  
             })
         },
         methods: {
             delItem(item){
                 axios.delete('./menu-wl/'+item.id+'.json')
                 .then(res=>{
-                    this.$router.push('/menu')
+                    //this.$router.push('/menu')
+                     this.$store.commit('deleteMenuItems',item)
+                    //记住刷新页面的方法
+                    // location.reload()  
                 })
             }
         },
+        computed:{
+          items(){
+             return this.$store.getters.getMenuItems
+          }
+        }  
         
     }
 </script>

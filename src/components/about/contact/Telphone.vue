@@ -9,7 +9,7 @@ export default {
   name: 'Telphone',
   data () {
     return {
-      tel:'100-500-8888' 
+      tel:'010-500-8888' 
     }
   }
 }

@@ -9,7 +9,7 @@ export default {
   name: 'Person',
   data () {
     return {
-      person:'web1112全体学生及老师' 
+      person:'王五' 
     }
   }
 }
